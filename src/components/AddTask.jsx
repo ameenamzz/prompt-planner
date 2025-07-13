@@ -33,7 +33,9 @@ const AddTask = () => {
         </div>
       </div>
       <div className=" mt-20">
-        <h1 className="flex justify-center">Tasks To Be Completed</h1>
+        {taskArray.length === 0 ? null : (
+          <h1 className="flex justify-center">Tasks To Be Completed</h1>
+        )}
         {taskArray.map((list) => (
           <ListTask data={list} />
         ))}
