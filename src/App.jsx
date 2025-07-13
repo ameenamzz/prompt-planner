@@ -1,14 +1,11 @@
-
-
+import Body from "./components/Body";
 
 function App() {
-  
-
   return (
     <>
-      <h1 className="bg-amber-300">hello</h1>
+      <Body />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
