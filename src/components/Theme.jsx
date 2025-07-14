@@ -22,7 +22,7 @@ const Theme = () => {
       </svg>
       <input
         type="checkbox"
-        value="light"
+        value="dark"
         className="toggle theme-controller"
       />
       <svg
