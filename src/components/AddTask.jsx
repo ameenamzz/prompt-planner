@@ -38,8 +38,10 @@ const AddTask = () => {
           </div>
         </div>
         <div className=" mt-20">
-          {taskArray.length === 0 ? null : (
-            <h1 className="flex justify-center">Tasks To Be Completed</h1>
+          {taskArray.length === 0 ? (
+            <h1 className="flex justify-center">No task pending</h1>
+          ) : (
+            <h1 className="flex justify-center">Tasks Pending</h1>
           )}
           {taskArray.map((list) => (
             <ListTask key={list} data={list} />
@@ -47,12 +49,14 @@ const AddTask = () => {
         </div>
       </>
       {doneTask.length != 0 && (
-        <div>
+        <div className="mt-10">
           <div className="flex justify-center">
             <h1>Completed Task</h1>
           </div>
 
-         {doneTask.map((task)=> <CompletedTask doneTask={task} />)}
+          {doneTask.map((task) => (
+            <CompletedTask key={task} doneTask={task} />
+          ))}
         </div>
       )}
     </ListContext.Provider>
