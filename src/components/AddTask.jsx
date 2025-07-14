@@ -6,6 +6,7 @@ const AddTask = () => {
   const [taskArray, setTaskArray] = useState([]);
   //   console.log(taskInput)
   const handleAddTask = () => {
+    if (taskInput === "") return null;
     setTaskInput(taskArray.push(taskInput));
     setTaskInput("");
     console.log(taskArray);
