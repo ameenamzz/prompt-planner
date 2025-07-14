@@ -4,7 +4,7 @@ import { ListContext } from "./AddTask";
 const ListTask = ({ data }) => {
   const { setTaskArray, setDoneTask } = useContext(ListContext);
 
-//   const [taskDone, setTaskDone] = useState(false);
+  //   const [taskDone, setTaskDone] = useState(false);
 
   const handleRemoveTask = (taskToRemove) => {
     setTaskArray((prevTasks) => prevTasks.filter((t) => t !== taskToRemove));
@@ -14,7 +14,7 @@ const ListTask = ({ data }) => {
     // setTaskDone(!taskDone);
     setTaskArray((prevTasks) => prevTasks.filter((t) => t !== taskToRemove));
     setDoneTask((prevTask) => [...prevTask, taskToRemove]);
-    console.log(taskToRemove);
+    // console.log(doneTask);
   };
 
   // if (taskDone === true) return null;

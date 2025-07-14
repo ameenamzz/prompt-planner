@@ -46,12 +46,15 @@ const AddTask = () => {
           ))}
         </div>
       </>
-      <div>
-        <div className="flex justify-center">
-          <h1>Completed Task</h1>
+      {doneTask.length != 0 && (
+        <div>
+          <div className="flex justify-center">
+            <h1>Completed Task</h1>
+          </div>
+
+         {doneTask.map((task)=> <CompletedTask doneTask={task} />)}
         </div>
-        <CompletedTask />
-      </div>
+      )}
     </ListContext.Provider>
   );
 };
