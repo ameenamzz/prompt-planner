@@ -1,10 +1,11 @@
 import React, { createContext, useState } from "react";
 import ListTask from "./ListTask";
+import CompletedTask from "./CompletedTask";
 export const ListContext = createContext();
 const AddTask = () => {
   const [taskInput, setTaskInput] = useState("");
   const [taskArray, setTaskArray] = useState([]);
-
+  const [doneTask, setDoneTask] = useState([]);
   const handleAddTask = () => {
     if (taskInput === "") return null;
     setTaskInput(taskArray.push(taskInput));
@@ -12,7 +13,7 @@ const AddTask = () => {
   };
 
   return (
-    <ListContext.Provider value={setTaskArray}>
+    <ListContext.Provider value={{ setTaskArray, setDoneTask }}>
       <>
         <div className="flex justify-center mt-40">
           <div>
@@ -41,10 +42,16 @@ const AddTask = () => {
             <h1 className="flex justify-center">Tasks To Be Completed</h1>
           )}
           {taskArray.map((list) => (
-            <ListTask data={list} />
+            <ListTask key={list} data={list} />
           ))}
         </div>
       </>
+      <div>
+        <div className="flex justify-center">
+          <h1>Completed Task</h1>
+        </div>
+        <CompletedTask />
+      </div>
     </ListContext.Provider>
   );
 };
