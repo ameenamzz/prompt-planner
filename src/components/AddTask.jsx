@@ -13,7 +13,7 @@ const AddTask = () => {
   };
 
   return (
-    <ListContext.Provider value={{ setTaskArray, setDoneTask }}>
+    <ListContext.Provider value={{ setTaskArray, setDoneTask, doneTask }}>
       <>
         <div className="flex justify-center mt-40">
           <div>
