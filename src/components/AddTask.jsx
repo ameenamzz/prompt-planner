@@ -1,15 +1,22 @@
 import React, { createContext, useState } from "react";
 import ListTask from "./ListTask";
 import CompletedTask from "./CompletedTask";
+import { Link, useLocation } from "react-router-dom";
 export const ListContext = createContext();
 const AddTask = () => {
   const [taskInput, setTaskInput] = useState("");
   const [taskArray, setTaskArray] = useState([]);
   const [doneTask, setDoneTask] = useState([]);
+  const [isAiActive, setIsAiActive] = useState(false);
+  const location = useLocation();
   const handleAddTask = () => {
     if (taskInput === "") return null;
     setTaskInput(taskArray.push(taskInput));
     setTaskInput("");
+  };
+
+  const handleAiPage = () => {
+    setIsAiActive(!isAiActive);
   };
 
   return (
@@ -25,15 +32,20 @@ const AddTask = () => {
               onChange={(e) => setTaskInput(e.target.value)}
             />
             <div className="mt-5">
-              <button
-                className=" btn btn-neutral w-full"
-                onClick={handleAddTask}
-              >
-                Add Task
-              </button>
-              <button className="btn btn-primary w-full">
-                Ask Ai to Create Task
-              </button>
+              {
+                <button
+                  className=" btn btn-neutral w-full"
+                  onClick={handleAddTask}
+                >
+                  Add Task
+                </button>
+              }
+              <Link to={"/prompt-planner/aitask"}>
+                {" "}
+                <button className="btn btn-primary w-full">
+                  Ask Ai to Create Task
+                </button>
+              </Link>
             </div>
           </div>
         </div>
