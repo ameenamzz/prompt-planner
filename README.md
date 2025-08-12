@@ -16,18 +16,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 # Prompt Planner
 
- APP
- |
- |___BODY   
-       |
-       |___Header
-       |
-       |___Main
-            |
-            |___Add Task
-            |
-            |___Task to do
-            |
-            |___Completed Task
+
 
        
