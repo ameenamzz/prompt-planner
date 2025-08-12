@@ -23,7 +23,7 @@ function App() {
         ],
       },
     ],
-    { basename: "/prompt-planner" } // ✅ correct key name
+    { basename: "/prompt-planner" } // ✅ MUST be enabled for GitHub Pages subpath
   );
 
   return <RouterProvider router={appRouter} />;
