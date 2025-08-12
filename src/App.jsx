@@ -7,18 +7,27 @@ import Header from "./components/Header";
 function App() {
   const appRouter = createBrowserRouter([
     {
-      path: "/prompt-planner/",
-      element: <Body />,
+      path: "/",
+      element: (
+        <>
+          <Header />
+          <Body />
+        </>
+      ),
     },
     {
       path: "/prompt-planner/aitask",
-      element: <AiComponent />,
+      element: (
+        <>
+          <Header />
+          <AiComponent />
+        </>
+      ),
     },
   ]);
 
   return (
     <>
-      <Header/>
       <RouterProvider router={appRouter} />
     </>
   );
