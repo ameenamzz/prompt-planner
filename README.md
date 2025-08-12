@@ -16,6 +16,19 @@ If you are developing a production application, we recommend using TypeScript wi
 
 # Prompt Planner
 
+Features
+🧠 AI Task Generation — Enter a prompt and let Gemini AI create a structured list of tasks for you.
+
+🎨  clean, minimal interface.
+
+📱 Responsive design that works on mobile, tablet, and desktop.
+
+⚡ Fast and lightweight build with Vite + React.
+
+
+
+
+
 
 
        
