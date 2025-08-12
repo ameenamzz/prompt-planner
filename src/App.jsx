@@ -23,7 +23,7 @@ function App() {
         ],
       },
     ],
-    { basename: "/prompt-planner" } // ✅ MUST be enabled for GitHub Pages subpath
+    { basename: "/prompt-planner/" } // ✅ MUST be enabled for GitHub Pages subpath
   );
 
   return <RouterProvider router={appRouter} />;
