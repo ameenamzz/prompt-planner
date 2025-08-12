@@ -1,36 +1,32 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Body from "./components/Body";
-import AddTask from "./components/AddTask";
 import AiComponent from "./components/AiComponent";
 import Header from "./components/Header";
 
-function App() {
-  const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          <Header />
-          <Body />
-        </>
-      ),
-    },
-    {
-      path: "/prompt-planner/aitask",
-      element: (
-        <>
-          <Header />
-          <AiComponent />
-        </>
-      ),
-    },
-  ]);
-
+function Layout() {
   return (
     <>
-      <RouterProvider router={appRouter} />
+      <Header />
+      <Outlet />
     </>
   );
+}
+
+function App() {
+  const appRouter = createBrowserRouter(
+    [
+      {
+        element: <Layout />,
+        children: [
+          { path: "/", element: <Body /> },
+          { path: "/aitask", element: <AiComponent /> },
+        ],
+      },
+    ],
+    { basename: "/prompt-planner" } // ✅ correct key name
+  );
+
+  return <RouterProvider router={appRouter} />;
 }
 
 export default App;

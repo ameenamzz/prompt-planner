@@ -40,7 +40,7 @@ const AddTask = () => {
                   Add Task
                 </button>
               }
-              <Link to={"/prompt-planner/aitask"}>
+              <Link to={"/aitask"}>
                 {" "}
                 <button className="btn btn-primary w-full">
                   Ask Ai to Create Task
