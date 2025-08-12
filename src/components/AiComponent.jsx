@@ -11,7 +11,7 @@ const AiComponent = () => {
   const taskPrompt = useRef(null);
 
   const handleAddTask = async () => {
-    // if (taskInput === "") return null;
+    if (taskPrompt.value === undefined) return;
     const gptQuery =
       "Act as a smart Task Planner. Based on the following user input, generate a list of 5 clear and concise to-do tasks that match the intent. :" +
       taskPrompt.current.value +
@@ -23,7 +23,7 @@ const AiComponent = () => {
     const response = result.response;
     const text = await response.text().trim();
     const finalOuptut = text.split(",");
-    console.log("fi", finalOuptut);
+    // console.log("fi", finalOuptut);
 
     setTaskArray((prev) => [...prev, ...finalOuptut]);
     console.log("taskarray", taskArray);
